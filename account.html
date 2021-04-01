@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ecomerce-website</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+
+</head>
+<body>
+<div class="header">
+	<div class="container">
+		<div class="navbar">
+			<div class="logo">
+				<a href="index.html"><img src="icon.png" width="60"></a>
+			</div>
+			<nav>
+				<ul id="menuitems">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="woman.html">Woman</a></li>
+					<li><a href="man.html">Man</a></li>
+					<li><a href="kids.html">Kids</a></li>
+					<li><a href="Electronics.html">Electronics</a></li>
+					<li><a href="account.html">Login</a></li>
+				</ul>
+			</nav>
+			<a href="cart.html"><img src="cart.jpg" height="30px" width="30px"></a>
+				<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+		</div>
+	</div>
+</div>
+
+<!-- ---------account page----------- -->
+<div class="account-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-2">
+				<img src="images/banner-home.png" width="100%" height="560px">
+			</div>
+			<div class="col-2">
+				<div class="form-container">
+					<div class="form-btn">
+						<span onclick="login()">Login</span>
+						<span onclick="ragister()">Ragister</span>
+						<hr id="Indicater">
+					</div>
+
+					<form id="Loginform">
+						<input type="text" placeholder="Username">
+						<input type="Password" placeholder="Password">
+						<button type="Submit" class="btn">Login</button>
+						<a href="">Forget Password</a>
+					</form>
+
+					<form id="Regform">
+						<input type="text" placeholder="Username">
+						<input type="email" placeholder="Email">
+						<input type="Password" placeholder="Password">
+						<button type="Submit" class="btn">Ragister</button>
+					</form>
+
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+	<!-- --------------footer----------- -->
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-1">
+				<h3>Get to knoe us</h3>
+				<ul>
+					<li>Contact Us</li>
+					<li>About Us</li>
+					<li>Careers</li>
+					<li>Stories</li>
+				</ul>
+			</div>
+
+			<div class="footer-col-2">
+				<h3>Useful Links</h3>
+				<ul>
+					<li>Coupans</li>
+					<li>Blog Posts</li>
+					<li>Returnc Policy</li>
+					<li>Privacy</li>
+				</ul>
+			</div>
+
+			<div class="footer-col-3">
+				<h3>Social</h3>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>Youtube</li>
+				</ul>
+			</div>
+
+			<div class="footer-col-4">
+				<div class="app-logo">
+					<img src="images/google.png">
+					<img src="images/app.png">
+				</div>
+			</div>
+		</div>
+	<hr>
+	<p class="Copyright">Copyright 2021 -First Ecomerce website</p>
+	</div>
+</div>
+<!-- ___________js for toggle menu---------- -->
+<script>
+	var menuitems = document.getElementById("menuitems");
+	menuitems.style.maxHeight = "10px";
+	fuction menuitems(){
+		if (menuitems.style.maxHeight == "0px") {
+			menuitems.style.maxHeight == "200px"
+		}
+		else{
+			menuitems.style.maxHeight == "0px"
+		}
+	}
+</script>
+
+<!-- --------------ja for toggle form-------------- -->
+<script type="text/javascript">
+	var Loginform =document.getElementById("Loginform");
+	var Regform =document.getElementById("Regform");
+	var Indicater = document.getElementById("Indicater");
+
+	function register(){
+		Regform.style.transform = "tanslateX(0px)";
+		Loginform.style.transform = "tanslateX(0px)";
+		Indicater.style.transform = "tanslateX(100px)";
+	}
+
+	function login(){
+		Regform.style.transform = "tanslateX(300px)";
+		Loginform.style.transform = "tanslateX(300px)";
+		Indicater.style.transform = "tanslateX(0px)";
+
+	}
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
