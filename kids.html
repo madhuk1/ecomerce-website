@@ -48,23 +48,24 @@
 	<div class="small-container single-product">
 		<div class="row">
 			<div class="col-2">
-				<img src="images/gallery.jpeg" width="100%" height="550px" id="Productimg">
+				<div class="js-placeholderImg">
+					<img src="images/gallery.jpeg" width="100%" height="550px">
+				</div>
 
 				<div class="smal-img-row">
 					<div class="smal-img-col">
-						<img src="images/gallery.jpeg" width="100%" height="150px;" class="small-img">
+						<img src="images/gallery.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/gallery.jpeg">
 					</div>
 					<div class="smal-img-col">
-						<img src="images/gallery1.jpeg" width="100%" height="150px;" class="small-img">
+						<img src="images/gallery1.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/gallery1.jpeg">
 					</div>
 					<div class="smal-img-col">
-						<img src="images/gallery2.jpeg" width="100%" height="150px;" class="small-img">
+						<img src="images/gallery2.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/gallery2.jpeg">
 					</div>
 					<div class="smal-img-col">
-						<img src="images/gallery3.jpeg" width="100%" height="150px;" class="small-img">
+						<img src="images/gallery3.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/gallery3.jpeg">
 					</div>
 				</div>
-
 			</div>
 
 			<div class="col-2">
@@ -99,7 +100,7 @@
 	<div class="small-container">
 		<div class="row">
 			<div class="col-4">
-				<img src="images/kids5.jpeg">
+				<img src="images/kids5.jpeg" >
 				<h4>Girls Below Knee Skirt Top (Pink, Grey) </h4>
 				<div class="rating">
 					<i class="fa fa-star"></i>
@@ -209,54 +210,35 @@
 		</div>
 	</div>
 
-<!-- ___________js for toggle menu---------- -->
-<!-- <script>
-	function myFunction() {
-  		document.getElementById("menuitems");
-	vxar menuitems = document.getElementById("menuitems");
-		menuitems.style.maxHeight = "10px";
-		function menuitems(){
-			if (menuitems.style.maxHeight = "0px")
-			{
-				(menuitems.style.maxHeight = "200px")
-			}
-			else
-			{
-				(menuitems.style.maxHeight = "0px")
-			}
-		}
-	</script> -->
-
 	<!-- ---------------jsfor product gallery------------ -->
 
-	<script type="text/javascript">
-		// var Productimg = document.getElementById("Productimg");
-		// var SmallImg = document.getElementByClassName("small-img");
-
-		function myFunction() {
-  		document.getElementById("productimg").className = "smallimg";
-
-			SmallImg[0].onclick = Function ()
-			{
-				Productimg.src = Smallimg[0].src;
-			}
-
-			SmallImg[1].onclick = Function ()
-			{
-				Productimg.src = Smallimg[1].src;
-			}
-
-			SmallImg[2].onclick = Function ()
-			{
-				Productimg.src = Smallimg[2].src;
-			}
-
-			SmallImg[3].onclick = Function ()
-			{
-				Productimg.src = Smallimg[3].src;
-			}
-		}
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
 		
+	</script>
+
+	<script type="text/javascript">
+		var body = $("body"); 
+
+		$(document).ready(function(){
+		
+		body.on("click", ".small-img", function(e) {
+			// alert("here");
+			e.preventDefault();
+
+			//get the src of the image
+			var srcChange = $(this).attr("data-img-src");
+
+			//get the placeholder where we are going to update the img src
+			var imgPlaceholder = $(".js-placeholderImg");
+
+			//apply new src of placeholder img and apply a fade transition
+			imgPlaceholder.find("img").attr("src", srcChange);
+
+		})
+
+		});
+
 	</script>
 
 </body>

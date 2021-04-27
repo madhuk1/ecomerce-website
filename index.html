@@ -6,9 +6,9 @@
 	<title>Ecomerce-website</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
 
 </head>
 <body>
@@ -30,7 +30,7 @@
 				</ul>
 			</nav>
 			<a href="cart.html"><img src="cart.jpg" height="30px" width="30px"></a>
-			<img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+			<img src="images/menu.png" class="menu-icon" onclick="menuT()">
 		</div>
 		<div class="row">
 			<div class="col-2">
@@ -361,18 +361,18 @@
 			<p class="Copyright">Copyright 2021 -First Ecomerce website</p>
 		</div>
 	</div>
-<!-- ___________js for toggle menu---------- -->
+
 <script>
-	var menuitems = document.getElementById("menuitems");
-	menuitems.style.maxHeight = "10px";
-	fuction menuitems(){
-		if (menuitems.style.maxHeight == "0px") {
-			menuitems.style.maxHeight == "200px"
-		}
-		else{
-			menuitems.style.maxHeight == "0px"
-		}
+
+	var menu = document.getElementById("menuitems");
+	function menuT() {
+		if (menu.style.display === "none") {
+    menu.style.display = "block";
+  	} else {
+    menu.style.display = "none";
+  	}
 	}
+
 </script>
 </body>
 </html>

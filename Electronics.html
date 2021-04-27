@@ -45,23 +45,24 @@
 <div class="small-container single-product">
 		<div class="row">
 			<div class="col-2">
-				<img src="images/leptop1.jpeg" width="100%" height="550px" id="Productimg">
-
-				<div class="smal-img-row">
-					<div class="smal-img-col">
-						<img src="images/leptop.jpeg" width="100%" height="150px;" class="small-img">
-					</div>
-					<div class="smal-img-col">
-						<img src="images/leptop2.jpeg" width="100%" height="150px;" class="small-img">
-					</div>
-					<div class="smal-img-col">
-						<img src="images/leptop1.jpeg" width="100%" height="150px;" class="small-img">
-					</div>
-					<div class="smal-img-col">
-						<img src="images/leptop3.jpeg" width="100%" height="150px;" class="small-img">
-					</div>
+				<div class="js-placeholderImg">
+					<img src="images/leptop1.jpeg" width="100%" height="550px">
 				</div>
 
+					<div class="smal-img-row">
+					<div class="smal-img-col">
+						<img src="images/leptop.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/leptop.jpeg">
+					</div>
+					<div class="smal-img-col">
+						<img src="images/leptop2.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/leptop2.jpeg">
+					</div>
+					<div class="smal-img-col">
+						<img src="images/leptop1.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/leptop1.jpeg">
+					</div>
+					<div class="smal-img-col">
+						<img src="images/leptop3.jpeg" width="100%" height="150px;" class="small-img" data-img-src="images/leptop3.jpeg">
+					</div>
+				</div>
 			</div>
 
 			<div class="col-2">
@@ -204,7 +205,38 @@
 			<p class="Copyright">Copyright 2021 -First Ecomerce website</p>
 		</div>
 	</div>
+ 
 
+	<!-- ---------------jsfor product gallery------------ -->
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
+		
+	</script>
+
+	<script type="text/javascript">
+		var body = $("body"); 
+
+		$(document).ready(function(){
+		
+		body.on("click", ".small-img", function(e) {
+			// alert("here");
+			e.preventDefault();
+
+			//get the src of the image
+			var srcChange = $(this).attr("data-img-src");
+
+			//get the placeholder where we are going to update the img src
+			var imgPlaceholder = $(".js-placeholderImg");
+
+			//apply new src of placeholder img and apply a fade transition
+			imgPlaceholder.find("img").attr("src", srcChange);
+
+		})
+
+		});
+
+	</script>
 
 </body>
 </html>
